@@ -1,18 +1,29 @@
 import express from "express";
-import ProductManager from "./productmanager.js"
+import ProductManager from "./productManager.js"
 import CartManager from "./cartManager.js";
+import { engine } from "express-handlebars"
+import viewsRouter from "./routes/view.router.js";
+import productsRouter from "./routes/products.router.js";
 
 const app = express();
 app.use( express.json() )
+app.use(express.static('public'))
+app.use(express.urlencoded({extended: true}))
+
+app.engine('handlebars', engine())
+app.set('view engine', 'handlebars')
+app.set('views', './src/views')
 
 const productManager = new ProductManager()
 const cartManager = new CartManager()
 
-//endpoints-rutas
+//endpoiint 
 
-app.get('/', (req, res)=>{
-    res.send("Hola Mundo")
-})
+app.use('/', viewsRouter)
+app.use('/', viewsRouter)
+
+app.use('/api/products', productsRouter)
+//endpoints-rutas
 
 app.get('/api/products', async (req , res)=>{
     const products = await productManager.getProducts()
@@ -54,10 +65,11 @@ app.post('/api/cart', async (req, res)=>{
     res.json({ carts: carts, message: "Carrito creado" })
 })
 
-app.post('/api/:cid/product/:pid', async (req ,res)=>{
+app.post('/api/cart/:cid/product/:pid', async (req ,res)=>{
     const cartId = req.params.cid
     const productId = req.params.pid
-    const cart = await cartManager.addProductToCart(cartId, productId)
+    const quantity = req.body
+    const cart = await cartManager.addProductToCart(cartId, productId, quantity)
     res.json({ carts: cart, message: "objeto agregado correctamente" })
 
 })

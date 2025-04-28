@@ -4,7 +4,9 @@
     "products": [
       {
         "productId": "2",
-        "quantity": 1
+        "quantity": {
+          "quantity": 2
+        }
       }
     ]
   },

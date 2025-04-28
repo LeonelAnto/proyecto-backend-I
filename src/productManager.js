@@ -8,8 +8,8 @@ class ProductManager{
 
     // cuando intento usar .lenght tira undefined
     generateId = (products)=>{
-        if(products.lenght > 0) {
-            return products[products.lenght - 1].id + 1;
+        if(products.length > 0) {
+            return products[products.length - 1].id + 1;
         } else {
             return 1;
         }

@@ -10,9 +10,9 @@ class CartManager{
 
 // cuando intento usar .lenght tira undefined
     generateId = (products)=>{
-        console.log(products.lenght)
-        if(products.lenght > 0) {
-            return products[products.lenght - 1].id + 1;
+        console.log(products.length)
+        if(products.length > 0) {
+            return products[products.length - 1].id + 1;
         } else {
             return 1;
         }
@@ -43,21 +43,24 @@ class CartManager{
     } 
 
 
-    addProductToCart = async (cid, pid)=>{
+    addProductToCart = async (cid, pid, quanti)=>{
         const cartJson= await fs.promises.readFile(this.path, 'utf-8')
         const carts = JSON.parse(cartJson);
         const productId = pid
         const cart = carts.find((cartData)=>cartData.id == cid)
 
-        //investigue por mi cuenta pero no encontre manera de acceder a quantity ni productId dentro de products por lo que estos dos valores de momento dan null
-        const quantity = cart.products.quantity
-        const idProductInCart = cart.products.productId
+        //investigue por mi cuenta pero no encontre manera de acceder a productId dentro de products por lo que estos dos valores de momento dan null
+        const quantity = quanti
+
+        const asd = cart.products
+        const idProductInCart = asd.productId
+        console.log(asd)
         
         //por lo mismo que explique de quantity y productId este if siempre tiende al else, para corroborar que el if funciona recomiendo hardcodear la igualdad
         if(idProductInCart == pid){
 
         const index = carts.findIndex(product => product.id == productId )
-        const quantitycounter = quantity + 1
+        const quantitycounter =  quanti
         cart.products[index] = { quantity: quantitycounter }
         await fs.promises.writeFile(this.path, JSON.stringify(carts, null, 2), 'utf-8')
 
