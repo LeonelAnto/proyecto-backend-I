@@ -1,46 +1,57 @@
 [
   {
     "id": 1,
-    "title": "a",
-    "description": "a",
-    "code": "a",
-    "price": 6,
-    "status": "boolean",
-    "stock": 15,
-    "category": "a",
-    "thumbnails": []
+    "title": "logitech g502 Lightspeed",
+    "description": "mouse gamer de logitech",
+    "code": "asdwtr12",
+    "price": 5000,
+    "status": "true",
+    "stock": 14,
+    "category": "mouse",
+    "thumbnail": "/img/1745883008455-Mouse-Gamer-Logitech-G502-Hero-Negro_35523_1.jpeg"
   },
   {
     "id": 2,
-    "title": "b",
-    "description": "b",
-    "code": "b",
-    "price": 4,
-    "status": "boolean",
-    "stock": 10,
-    "category": "b",
-    "thumbnails": []
+    "title": "logitech g413 carbono",
+    "description": "teclado de logitech",
+    "code": "dwasdwq2",
+    "price": 5500,
+    "status": "true",
+    "stock": 21,
+    "category": "keyboard",
+    "thumbnail": "/img/1745883099895-g413-gallery-1-nb.png"
   },
   {
     "id": 3,
-    "title": "c",
-    "description": "c",
-    "code": "c",
-    "price": 2,
-    "status": "boolean",
-    "stock": 12,
-    "category": "c",
-    "thumbnails": []
+    "title": "HyperX Fury S Pro Speed edition",
+    "description": "Mousepad de hyperX",
+    "code": "dwwqqtftgt11",
+    "price": 2500,
+    "status": "true",
+    "stock": 10,
+    "category": "mousepad",
+    "thumbnail": "/img/1745883208276-D_NQ_NP_683814-MLA41164429541_032020-O.webp"
   },
   {
     "id": 4,
-    "title": "d",
-    "description": "d",
-    "code": "d",
-    "price": 5,
-    "status": "boolean",
-    "stock": 20,
-    "category": "d",
-    "thumbnails": []
+    "title": "Odyssey G4 27\" FHD 240Hz",
+    "description": "monitor samsung",
+    "code": "bjqnjwio1",
+    "price": 30000,
+    "status": "true",
+    "stock": 5,
+    "category": "monitor",
+    "thumbnail": "/img/1745883310036-ar-odyssey-g4-27g40b-ls27bg400elxzb-533464450.avif"
+  },
+  {
+    "id": 5,
+    "title": "iPhone 13 (128 GB)",
+    "description": "Celular",
+    "code": "dqwefwevw15",
+    "price": 40000,
+    "status": "true",
+    "stock": 7,
+    "category": "celular",
+    "thumbnail": "/img/1745883406334-D_NQ_NP_736168-MLA47781742030_102021-O.webp"
   }
 ]
