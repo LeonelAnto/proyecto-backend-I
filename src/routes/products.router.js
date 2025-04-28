@@ -18,7 +18,7 @@ productsRouter.post('/', uploader.single("file"), async (req,res) =>{
     const thumbnail = "/img/" + req.file.filename
 
     await productManager.addProduct({title,description,code, price, status, stock, category, thumbnail})
-    res.redirect('/realtimeproducts')
+    res.redirect('/')
 })
 
 

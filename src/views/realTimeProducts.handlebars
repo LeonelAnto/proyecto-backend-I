@@ -11,23 +11,27 @@
         <h2>{{this.title}}</h2>
         <h2>descripcion: {{this.description}}</h2>
         <h3>Precio: {{this.price}}</h3>
+        <button id="delete">Eliminar</button>
     </li>
 
 
     {{/each}}
 </div>
 
+<div id="productCard">
+
+</div>
 
 <div>
-    <form action="http://localhost:8080/api/products" method="post" enctype="multipart/form-data">
-        <input type="text" name="title" placeholder="nombre del producto">
-        <input type="number" name="price" placeholder="precio del producto">
-        <input type="text" name="category" placeholder="categoria del producto">
-        <input type="text" name="description" placeholder="descripcion del producto">
-        <input type="number" name="stock" placeholder="stock del producto">
-        <input type="text" name="code" placeholder="codigo del producto">
-        <input type="text" name="status" placeholder="status del producto">
-        <input type="file" name="file">
+    <form action="http://localhost:8080/api/products" id="formCreateProduct" method="post" enctype="multipart/form-data">
+        <input id="inputTitle" type="text" name="title" placeholder="nombre del producto">
+        <input id="inputPrice" type="number" name="price" placeholder="precio del producto">
+        <input id="inputCategory" type="text" name="category" placeholder="categoria del producto">
+        <input id="inputDescription" type="text" name="description" placeholder="descripcion del producto">
+        <input id="inputStock" type="number" name="stock" placeholder="stock del producto">
+        <input id="inputCode" type="text" name="code" placeholder="codigo del producto">
+        <input id="inputStatus" type="text" name="status" placeholder="status del producto">
+        <input id="inputFile" type="file" name="file">
 
         <button type="submit"> Agregar Producto </button>
 
@@ -36,3 +40,8 @@
 
 
 </div>
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>
